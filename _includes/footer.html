@@ -1,0 +1,17 @@
+{%- assign home = '/' | relative_url -%}
+<footer class="end">
+  <h2 class="end-h reveal-lines" data-split-raw>
+    <span class="line"><span>Hecho para</span></span>
+    <span class="line"><span class="acc">usarse.</span></span>
+  </h2>
+  <div class="end-cta fade-up">
+    <a class="btn btn-primary" href="{{ home }}#descargar" data-scroll>Descargar ZIntercept {% include arrow.html %}</a>
+  </div>
+  <div class="footer-bottom">
+    <div class="signature">Iván Z</div>
+    <div class="footer-meta">
+      <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub {% include arrow.html %}</a>
+      <span class="fine">© {{ site.time | date: "%Y" }} Iván Z. Madrid, España</span>
+    </div>
+  </div>
+</footer>

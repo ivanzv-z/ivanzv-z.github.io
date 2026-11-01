@@ -1,0 +1,24 @@
+{%- assign home = '/' | relative_url -%}
+<header class="site-header" id="site-header">
+  <nav class="site-nav" aria-label="Principal">
+    <a href="{{ home }}#top" class="logo" data-scroll aria-label="Iván Z, volver al inicio">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#1c1814"/><path d="M24 24 L76 24 L24 76 L76 76" fill="none" stroke="#e8650f" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <span class="logo-name">Iván Z</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="{{ home }}#sobre-mi" data-scroll>Sobre mí</a></li>
+      <li><a href="{{ home }}#aplicaciones" data-scroll>Aplicaciones</a></li>
+      <li><a href="{{ home }}#apuntes" data-scroll>Apuntes</a></li>
+      <li><a class="btn btn-primary" href="{{ home }}#descargar" data-scroll>Descargar ZIntercept</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+  <ul>
+    <li><a href="{{ home }}#sobre-mi" data-scroll>Sobre mí</a></li>
+    <li><a href="{{ home }}#aplicaciones" data-scroll>Aplicaciones</a></li>
+    <li><a href="{{ home }}#apuntes" data-scroll>Apuntes</a></li>
+  </ul>
+  <a class="btn btn-primary mobile-cta" href="{{ home }}#descargar" data-scroll>Descargar ZIntercept</a>
+</div>

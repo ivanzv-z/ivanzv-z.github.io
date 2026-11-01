@@ -1,0 +1,26 @@
+# Configuración de la web de Iván Z (GitHub Pages + Jekyll)
+title: Iván Z
+description: Herramientas de ciberseguridad ofensiva hechas para usarse. Descarga ZIntercept y lee apuntes técnicos.
+url: https://ivanzv-z.github.io
+baseurl: ""
+lang: es
+
+# Cuenta de GitHub y enlace de descarga de la app protagonista
+github: https://github.com/ivanzv-z
+zintercept_download: https://github.com/ivanzv-z/zintercept/releases/latest
+
+# Cada apunte queda en /apuntes/nombre-del-archivo/
+permalink: /apuntes/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+highlighter: rouge
+
+# Meses en español para las fechas
+meses: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+
+exclude:
+  - README.md
+  - .gitignore

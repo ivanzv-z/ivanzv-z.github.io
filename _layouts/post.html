@@ -1,0 +1,57 @@
+---
+layout: default
+body_class: article-page
+---
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutos = words | divided_by: 200.0 | ceil -%}
+{%- if minutos < 1 %}{% assign minutos = 1 %}{% endif -%}
+<div class="read-progress" id="read-progress" aria-hidden="true"></div>
+
+<article class="article">
+  <header class="article-head">
+    <a class="back" href="{{ '/' | relative_url }}#apuntes">
+      <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 3.5L5.5 8l4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Todos los apuntes
+    </a>
+    <p class="article-meta fade-up" style="--fy:12px">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{% include fecha.html fecha=page.date %}</time>
+      <span>{{ minutos }} min de lectura</span>
+    </p>
+    <h1 class="article-title reveal-lines" data-split>{{ page.title }}</h1>
+    {%- if page.description %}
+    <p class="article-lead fade-up" style="--d:120ms">{{ page.description }}</p>
+    {%- endif %}
+  </header>
+
+  {%- if page.image %}
+  <figure class="article-cover fade-up" style="--d:200ms">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | default: page.title | xml_escape }}" loading="eager">
+  </figure>
+  {%- endif %}
+
+  <div class="prose fade-up" style="--d:240ms">
+{{ content }}
+  </div>
+
+  <nav class="article-nav" aria-label="Más apuntes">
+    {%- if page.previous %}
+    <a class="article-nav-link prev" href="{{ page.previous.url | relative_url }}">
+      <span>Anterior</span>
+      <strong>{{ page.previous.title }}</strong>
+    </a>
+    {%- else %}<span></span>{%- endif %}
+    {%- if page.next %}
+    <a class="article-nav-link next" href="{{ page.next.url | relative_url }}">
+      <span>Siguiente</span>
+      <strong>{{ page.next.title }}</strong>
+    </a>
+    {%- endif %}
+  </nav>
+</article>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+  <button class="lightbox-close" type="button" aria-label="Cerrar imagen">
+    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+  </button>
+  <img alt="">
+</div>

@@ -1,0 +1,136 @@
+---
+layout: default
+body_class: home
+preloader: true
+---
+{%- capture dl_icon -%}<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v8M4.5 7.5L8 11l3.5-3.5M3 13.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>{%- endcapture -%}
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero-top">
+      <h2 class="hero-roles reveal-lines" id="roles">
+        <span class="line"><span>Seguridad ofensiva</span></span>
+        <span class="line"><span>Herramientas propias</span></span>
+        <span class="line"><span>Madrid</span></span>
+      </h2>
+      <div class="hero-side">
+        <p class="hero-desc fade-up" id="hero-desc" style="--fy:16px">
+          Construyo herramientas de ciberseguridad y las publico para que cualquiera pueda usarlas.
+        </p>
+        <div class="hero-ctas fade-up" id="hero-ctas" style="--fy:16px;--d:100ms">
+          <a class="btn btn-primary" href="#descargar" data-scroll>Descargar ZIntercept {% include arrow.html %}</a>
+          <a class="btn btn-ghost" href="#aplicaciones" data-scroll>Ver aplicaciones</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="portrait-wrap" id="portrait-wrap">
+      <div class="portrait" id="portrait">
+        <img src="{{ '/assets/img/avatar.jpg' | relative_url }}" alt="Avatar de Iván Z: silueta con sombrero, gafas redondas, bigote y pipa" width="400" height="400" fetchpriority="high">
+        <div class="scan" aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <h1 class="hero-name" id="hero-name" aria-label="Iván Z">
+      <span class="nl" data-text="Iván Z" aria-hidden="true">Iván Z</span>
+    </h1>
+  </section>
+
+  <!-- Marquee -->
+  <section class="marquee" aria-label="Áreas de trabajo">
+    <div class="marquee-track" id="marquee"></div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section class="section" id="sobre-mi">
+    <div class="story-grid">
+      <div>
+        <h2 class="h-section reveal-lines" style="max-width:15ch" data-split>Construyo lo que después intento romper.</h2>
+        <p class="story-lead fade-up">
+          Trabajo entre la seguridad ofensiva y el desarrollo. Cuando me falta una herramienta, la escribo. Cuando aguanta mis propias pruebas, la publico aquí para que la uses tú también.
+        </p>
+      </div>
+      <ul>
+        <li class="principle fade-up"><h3>Nace de un problema real</h3><p>Cada herramienta sale de algo que necesité yo mismo, no de una lista de funciones imaginadas.</p></li>
+        <li class="principle fade-up" style="--d:90ms"><h3>Publico lo que funciona</h3><p>Prefiero pocas aplicaciones que se puedan usar de verdad a muchas a medio terminar.</p></li>
+        <li class="principle fade-up" style="--d:180ms"><h3>Sin humo</h3><p>Ni promesas vacías ni capturas inventadas. Lo que ves aquí es lo que hay.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Aplicaciones: ZIntercept protagonista + taller -->
+  <section class="section" id="aplicaciones" style="padding-top:0">
+    <div class="sec-head">
+      <h2 class="h-section reveal-lines" style="max-width:13ch" data-split>Herramientas que puedes usar hoy.</h2>
+      <p class="sec-aside fade-up">ZIntercept ya se puede descargar. Las demás siguen en el taller.</p>
+    </div>
+
+    <article class="flag" id="descargar">
+      <div class="liquid fade-up is-live">
+        <div class="liquid-inner">
+          <div class="ph" style="--g1:rgba(232,101,15,.5);--gx:78%;--gy:16%">
+            <div class="ph-top"><span>Proxy de interceptación</span><span>Windows y Linux</span></div>
+            <div class="ph-code">proxy   127.0.0.1:8080
+CA      generada en local</div>
+            <div class="ph-title">ZIntercept</div>
+          </div>
+        </div>
+      </div>
+      <div class="flag-body">
+        <span class="flag-status fade-up">Disponible</span>
+        <h3 class="fade-up" style="--d:60ms">ZIntercept</h3>
+        <p class="fade-up" style="--d:120ms">Proxy de interceptación para pentesting, en la línea de Burp Suite, centrado solo en seguridad ofensiva.</p>
+        <ul class="flag-facts fade-up" style="--d:180ms">
+          <li><span>Navegador</span><span>Abre su propio navegador de pruebas con el proxy y el certificado ya configurados.</span></li>
+          <li><span>Certificado</span><span>Genera su CA en tu equipo. No toca el almacén de confianza del sistema.</span></li>
+          <li><span>Motor</span><span>mitmproxy por debajo, con Python embebido. No hay que instalar nada más.</span></li>
+        </ul>
+        <div class="dl fade-up" style="--d:240ms">
+          <a class="btn btn-primary" href="{{ site.zintercept_download }}" target="_blank" rel="noopener">Windows {{ dl_icon }}</a>
+          <a class="btn btn-ghost" href="{{ site.zintercept_download }}" target="_blank" rel="noopener">Linux {{ dl_icon }}</a>
+        </div>
+        <p class="dl-note fade-up" style="--d:300ms">Instalador .exe para Windows; AppImage y .deb para Linux. Úsala solo contra sistemas propios o con autorización por escrito.</p>
+      </div>
+    </article>
+
+    <h3 class="workshop-h reveal-lines" data-split>En el taller</h3>
+    <p class="workshop-sub fade-up">Lo que sigo construyendo. Saldrán aquí cuando estén listas para usarse.</p>
+    <ul class="projects">
+      {%- for app in site.data.taller %}
+      <li class="fade-up"{% cycle '', ' style="--d:120ms"' %}>
+        <article class="card">
+          <div class="liquid"><div class="liquid-inner"><div class="ph" style="--g1:{{ app.tono }}">
+            <div class="ph-top"><span>{{ app.arriba[0] }}</span><span>{{ app.arriba[1] }}</span></div>
+            <div class="ph-title">{{ app.titulo }}</div>
+          </div></div></div>
+          <div class="card-row">
+            <div><h4>{{ app.nombre }}</h4><p>{{ app.texto }}</p></div>
+            <div class="card-meta">{{ app.estado }}</div>
+          </div>
+        </article>
+      </li>
+      {%- endfor %}
+    </ul>
+  </section>
+
+  <!-- Apuntes -->
+  <section class="section" id="apuntes" style="padding-top:0">
+    <div class="sec-head">
+      <h2 class="h-section reveal-lines" style="max-width:12ch" data-split>Apuntes técnicos.</h2>
+      <p class="sec-aside fade-up">No es un blog. Son las notas que me habría gustado encontrar a mano.</p>
+    </div>
+    <ol class="notes">
+      {%- for post in site.posts %}
+      <li class="fade-up">
+        <a class="note" href="{{ post.url | relative_url }}">
+          <time datetime="{{ post.date | date: '%Y-%m-%d' }}">{% include fecha.html fecha=post.date %}</time>
+          <div>
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.description | default: post.excerpt | strip_html | truncatewords: 40 }}</p>
+            <span class="note-more">Leer apunte {% include arrow.html %}</span>
+          </div>
+        </a>
+      </li>
+      {%- endfor %}
+    </ol>
+  </section>

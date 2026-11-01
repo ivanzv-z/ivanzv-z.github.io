@@ -1,0 +1,29 @@
+# Apps "En el taller" de la portada.
+# Para añadir una, copia un bloque entero y cambia los textos.
+#   titulo:  nombre grande que sale dentro de la tarjeta (corto)
+#   nombre:  nombre de la app debajo de la tarjeta
+#   arriba:  dos etiquetas pequeñas de la esquina superior
+#   texto:   una o dos frases
+#   estado:  "En desarrollo", "Próximamente"...
+#   tono:    color del brillo (no hace falta tocarlo)
+
+- titulo: Suite
+  nombre: Suite de escritorio
+  arriba: [Escritorio, Cinco apps]
+  texto: "Cinco utilidades con la misma interfaz: Puerto, Huella, Quién llama, Bitácora SOC y Prompt Leak Check."
+  estado: En desarrollo
+  tono: "rgba(232,101,15,.45);--gx:75%;--gy:18%"
+
+- titulo: "Port&shy;cullis"
+  nombre: Portcullis
+  arriba: [MCP, Gateway]
+  texto: "Gateway de seguridad para servidores MCP: autoriza herramientas y avisa si una cambia a escondidas."
+  estado: En desarrollo
+  tono: "rgba(255,140,60,.42);--gx:25%;--gy:25%"
+
+- titulo: "Stric&shy;ture"
+  nombre: Stricture
+  arriba: [MCP, Escáner]
+  texto: "Revisa configuraciones MCP y señala los accesos con más privilegio del que necesitan."
+  estado: En desarrollo
+  tono: "rgba(232,101,15,.38);--gx:80%;--gy:72%"
