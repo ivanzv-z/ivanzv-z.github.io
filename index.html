@@ -5,6 +5,21 @@ preloader: true
 ---
 {%- capture dl_icon -%}<svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v8M4.5 7.5L8 11l3.5-3.5M3 13.5h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>{%- endcapture -%}
 
+  <!-- Bienvenida: solo aparece cuando la web se abre desde ZIntercept (?ref=zintercept) -->
+  <aside class="welcome" id="welcome" hidden aria-label="Primeros pasos con ZIntercept">
+    <div class="welcome-in">
+      <p class="welcome-title">Estás en el navegador de pruebas de ZIntercept</p>
+      <ol class="welcome-steps">
+        <li>Escribe arriba la dirección de la web que quieres auditar.</li>
+        <li>En ZIntercept, enciende la escucha (interruptor o tecla P).</li>
+        <li>Navega: cada petición aparecerá en la app.</li>
+      </ol>
+      <button class="welcome-close" type="button" aria-label="Cerrar aviso">
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </aside>
+
   <!-- Hero -->
   <section class="hero" id="top">
     <div class="hero-top">
@@ -86,10 +101,10 @@ CA      generada en local</div>
           <li><span>Motor</span><span>mitmproxy por debajo, con Python embebido. No hay que instalar nada más.</span></li>
         </ul>
         <div class="dl fade-up" style="--d:240ms">
-          <a class="btn btn-primary" href="{{ site.zintercept_download }}" target="_blank" rel="noopener">Windows {{ dl_icon }}</a>
-          <a class="btn btn-ghost" href="{{ site.zintercept_download }}" target="_blank" rel="noopener">Linux {{ dl_icon }}</a>
+          <a class="btn btn-primary" href="{{ site.zintercept_win }}" rel="noopener noreferrer">Windows {{ dl_icon }}</a>
+          <a class="btn btn-ghost" href="{{ site.zintercept_deb }}" rel="noopener noreferrer">Linux .deb {{ dl_icon }}</a>
         </div>
-        <p class="dl-note fade-up" style="--d:300ms">Instalador .exe para Windows; AppImage y .deb para Linux. Úsala solo contra sistemas propios o con autorización por escrito.</p>
+        <p class="dl-note fade-up" style="--d:300ms">Windows 10 y 11 (instalador .exe, {{ site.zintercept_win_size }}). Linux Debian, Ubuntu y derivadas (.deb, {{ site.zintercept_deb_size }}). Las dos versiones son la misma aplicación. Úsala solo contra sistemas propios o con autorización por escrito.</p>
       </div>
     </article>
 

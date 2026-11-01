@@ -20,10 +20,14 @@
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:image" content="{{ page.image | default: '/assets/img/avatar.jpg' | absolute_url }}">
 <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Seguridad: todo se sirve desde este dominio; nada de terceros.
+     (GitHub Pages no permite cabeceras HTTP propias, así que la política va en meta.) -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="preload" href="{{ '/assets/fonts/anton-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ '/assets/fonts/onest-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+<script src="{{ '/assets/js/grid.js' | relative_url }}"></script>
 <noscript><style>
   #preloader{display:none}
   .line>span,.fade-up,.portrait,.hero-name .ch{opacity:1!important;transform:none!important}
@@ -47,18 +51,6 @@
 {% include footer.html %}
 </main>
 
-<script>
-/* Rejilla adaptativa por encima de 1920px */
-(function(){
-  const BASE=16,W=1920,K=.6666;
-  function apply(){
-    const w=innerWidth,red=((W-w)/W)*100*K,size=BASE-(BASE*red)/100;
-    if(size>BASE)document.documentElement.style.fontSize=size+"px";
-    else document.documentElement.style.removeProperty("font-size");
-  }
-  apply();addEventListener("resize",apply);
-})();
-</script>
 <script type="module" src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 </html>

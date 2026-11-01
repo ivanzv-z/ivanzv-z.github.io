@@ -5,9 +5,18 @@ url: https://ivanzv-z.github.io
 baseurl: ""
 lang: es
 
-# Cuenta de GitHub y enlace de descarga de la app protagonista
+# Cuenta de GitHub y descargas de la app protagonista.
+# "latest/download/<archivo>" siempre baja la última versión publicada en Releases,
+# así que al publicar una versión nueva NO hace falta tocar la web
+# (basta con subir los archivos con estos mismos nombres).
 github: https://github.com/ivanzv-z
-zintercept_download: https://github.com/ivanzv-z/zintercept/releases/latest
+zintercept_repo: https://github.com/ivanzv-z/zintercept
+zintercept_win: https://github.com/ivanzv-z/zintercept/releases/latest/download/ZIntercept-Setup-x64.exe
+zintercept_deb: https://github.com/ivanzv-z/zintercept/releases/latest/download/zintercept-amd64.deb
+zintercept_win_size: 106 MB
+zintercept_deb_size: 121 MB
+sugerencias: https://github.com/ivanzv-z/zintercept/issues/new?template=sugerencia.yml
+seguridad: https://github.com/ivanzv-z/zintercept/security/advisories/new
 
 # Cada apunte queda en /apuntes/nombre-del-archivo/
 permalink: /apuntes/:title/
@@ -20,6 +29,10 @@ highlighter: rouge
 
 # Meses en español para las fechas
 meses: [enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+
+# .well-known/security.txt (Jekyll ignora por defecto las carpetas con punto)
+include:
+  - .well-known
 
 exclude:
   - README.md

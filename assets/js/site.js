@@ -10,7 +10,7 @@ let lenis = null;
 if (!reduce) {
   try {
     const { default: Lenis } = await Promise.race([
-      import("https://cdn.jsdelivr.net/npm/lenis@1.3.19/dist/lenis.mjs"),
+      import("./vendor/lenis.mjs"),
       new Promise((_, no) => setTimeout(() => no(new Error("timeout")), 2500)),
     ]);
     lenis = new Lenis({ smoothWheel: true, lerp: .1 });
@@ -164,6 +164,17 @@ function heroIn() {
 const hashTarget = location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
 let seen = false;
 try { seen = sessionStorage.getItem("ivanz-intro") === "1"; } catch (e) {}
+
+// Abierta desde ZIntercept (primera pestaña del navegador de pruebas):
+// aviso de primeros pasos y sin preloader, para que cargue al momento.
+const fromApp = new URLSearchParams(location.search).get("ref") === "zintercept";
+const welcome = $("#welcome");
+if (fromApp && welcome) {
+  seen = true;
+  document.body.classList.add("from-app");
+  welcome.hidden = false;
+  $(".welcome-close", welcome).addEventListener("click", () => { welcome.hidden = true; document.body.classList.remove("from-app"); });
+}
 const pl = $("#preloader");
 
 if (pl && !reduce && !seen && !hashTarget) {

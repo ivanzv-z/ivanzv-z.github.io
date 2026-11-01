@@ -1,3 +1,9 @@
+/* ---------- Fuentes (servidas desde este dominio) ---------- */
+@font-face{font-family:"Anton";font-style:normal;font-weight:400;font-display:swap;src:url("../fonts/anton-400.woff2") format("woff2")}
+@font-face{font-family:"Onest";font-style:normal;font-weight:400;font-display:swap;src:url("../fonts/onest-400.woff2") format("woff2")}
+@font-face{font-family:"Onest";font-style:normal;font-weight:500;font-display:swap;src:url("../fonts/onest-500.woff2") format("woff2")}
+@font-face{font-family:"Onest";font-style:normal;font-weight:600;font-display:swap;src:url("../fonts/onest-600.woff2") format("woff2")}
+
 /* ---------- Reset ---------- */
 *{margin:0;padding:0;box-sizing:border-box}
 img,svg{display:block;max-width:100%}
@@ -353,3 +359,17 @@ a.note:active{transform:none}
   .prose pre{font-size:.78rem;padding:1rem 1.1rem}
   .prose .highlight pre{padding:1rem 1.1rem}
 }
+
+/* ---------- Bienvenida desde ZIntercept ---------- */
+.welcome{position:relative;z-index:calc(var(--z-nav) - 1);margin:5.5rem var(--gutter) 0;border-radius:var(--radius);background:var(--dark);color:#f6f1ea}
+.welcome[hidden]{display:none}
+.welcome-in{position:relative;padding:1.5rem 4rem 1.5rem 1.75rem}
+.welcome-title{font-family:var(--font-display);text-transform:uppercase;font-size:1.6rem;line-height:1.05;color:var(--accent)}
+.welcome-steps{margin-top:1rem;display:grid;grid-template-columns:1fr;gap:.5rem 2rem;counter-reset:paso;font-size:.95rem;color:#e6ded3}
+.welcome-steps li{counter-increment:paso;display:flex;gap:.6rem;align-items:baseline}
+.welcome-steps li::before{content:counter(paso);flex:none;display:inline-grid;place-items:center;width:1.4rem;height:1.4rem;border-radius:99px;background:var(--accent);color:var(--dark);font-size:.75rem;font-weight:600}
+@media (min-width:900px){.welcome-steps{grid-template-columns:repeat(3,1fr)}}
+.welcome-close{position:absolute;top:1rem;right:1rem;width:2.5rem;height:2.5rem;display:grid;place-items:center;border-radius:var(--radius);color:#f6f1ea}
+.welcome-close svg{width:1rem;height:1rem}
+@media (hover:hover) and (pointer:fine){.welcome-close:hover{background:rgba(255,255,255,.1)}}
+body.from-app .hero-top{padding-top:3rem}
