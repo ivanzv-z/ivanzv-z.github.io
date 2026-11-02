@@ -1,6 +1,6 @@
 # Configuración de la web de Iván Z (GitHub Pages + Jekyll)
 title: Iván Z
-description: Herramientas de ciberseguridad hechas para usarse. Descarga ZIntercept y ZGuard, y lee apuntes técnicos.
+description: Herramientas de ciberseguridad hechas para usarse. Descarga ZGuard y ZIntercept, y lee apuntes técnicos.
 url: https://ivanzv-z.github.io
 baseurl: ""
 lang: es

@@ -33,8 +33,8 @@ preloader: true
           Construyo herramientas de ciberseguridad y las publico para que cualquiera pueda usarlas.
         </p>
         <div class="hero-ctas fade-up" id="hero-ctas" style="--fy:16px;--d:100ms">
-          <a class="btn btn-primary" href="#descargar" data-scroll>Descargar ZIntercept {% include arrow.html %}</a>
-          <a class="btn btn-ghost" href="#zguard" data-scroll>Nuevo: ZGuard</a>
+          <a class="btn btn-primary" href="#descargar" data-scroll>Descargar ZGuard {% include arrow.html %}</a>
+          <a class="btn btn-ghost" href="#zintercept" data-scroll>Ver ZIntercept</a>
         </div>
       </div>
     </div>
@@ -77,39 +77,11 @@ preloader: true
   <section class="section" id="aplicaciones" style="padding-top:0">
     <div class="sec-head">
       <h2 class="h-section reveal-lines" style="max-width:13ch" data-split>Herramientas que puedes usar hoy.</h2>
-      <p class="sec-aside fade-up">ZIntercept y ZGuard ya se pueden descargar. Las demás siguen en el taller.</p>
+      <p class="sec-aside fade-up">ZGuard y ZIntercept ya se pueden descargar. Las demás siguen en el taller.</p>
     </div>
 
-    <article class="flag" id="descargar">
-      <div class="liquid fade-up is-live">
-        <div class="liquid-inner">
-          <div class="ph" style="--g1:rgba(232,101,15,.5);--gx:78%;--gy:16%">
-            <div class="ph-top"><span>Proxy de interceptación</span><span>Windows y Linux</span></div>
-            <div class="ph-code">proxy   127.0.0.1:8080
-CA      generada en local</div>
-            <div class="ph-title">ZIntercept</div>
-          </div>
-        </div>
-      </div>
-      <div class="flag-body">
-        <span class="flag-status fade-up">Disponible</span>
-        <h3 class="fade-up" style="--d:60ms">ZIntercept</h3>
-        <p class="fade-up" style="--d:120ms">Proxy de interceptación para pentesting, en la línea de Burp Suite, centrado solo en seguridad ofensiva.</p>
-        <ul class="flag-facts fade-up" style="--d:180ms">
-          <li><span>Navegador</span><span>Abre su propio navegador de pruebas con el proxy y el certificado ya configurados.</span></li>
-          <li><span>Certificado</span><span>Genera su CA en tu equipo. No toca el almacén de confianza del sistema.</span></li>
-          <li><span>Motor</span><span>mitmproxy por debajo, con Python embebido. No hay que instalar nada más.</span></li>
-        </ul>
-        <div class="dl fade-up" style="--d:240ms">
-          <a class="btn btn-primary" href="{{ site.zintercept_win }}" rel="noopener noreferrer">Windows {{ dl_icon }}</a>
-          <a class="btn btn-ghost" href="{{ site.zintercept_deb }}" rel="noopener noreferrer">Linux .deb {{ dl_icon }}</a>
-        </div>
-        <p class="dl-note fade-up" style="--d:300ms">Windows 10 y 11 (instalador .exe, {{ site.zintercept_win_size }}). Linux Debian, Ubuntu y derivadas (.deb, {{ site.zintercept_deb_size }}). Las dos versiones son la misma aplicación. Úsala solo contra sistemas propios o con autorización por escrito.</p>
-      </div>
-    </article>
-
-
-    <article class="flag flag--rev" id="zguard">
+    <span id="descargar" class="anchor" aria-hidden="true"></span>
+    <article class="flag" id="zguard">
       <div class="liquid fade-up is-live">
         <div class="liquid-inner">
           <div class="ph" style="--g1:rgba(232,101,15,.5);--gx:22%;--gy:20%">
@@ -124,6 +96,7 @@ upd.exe       → servidor de malware · <b>bloqueado</b></div>
       </div>
       <div class="flag-body">
         <span class="flag-status fade-up">Nuevo · Disponible</span>
+        <p class="flag-date fade-up">Publicada el <time datetime="2026-11-02">2 de noviembre de 2026</time> · versión 0.2.0</p>
         <h3 class="fade-up" style="--d:60ms">ZGuard</h3>
         <p class="fade-up" style="--d:120ms">Qué programa de tu PC se conecta adónde, en lenguaje normal. Te avisa de lo raro y lo cortas con un clic.</p>
         <ul class="flag-facts fade-up" style="--d:180ms">
@@ -136,6 +109,35 @@ upd.exe       → servidor de malware · <b>bloqueado</b></div>
           <a class="btn btn-primary" href="{{ site.zguard_win }}" rel="noopener noreferrer">Descargar para Windows {{ dl_icon }}</a>
         </div>
         <p class="dl-note fade-up" style="--d:300ms">Windows 10 y 11 de 64 bits (instalador .exe, {{ site.zguard_win_size }}). Pide permiso de administrador porque necesita ver todos los programas y usar el Firewall de Windows. Si Windows muestra «Windows protegió su PC», pulsa «Más información» y «Ejecutar de todas formas»: el instalador todavía no tiene firma de pago.</p>
+      </div>
+    </article>
+
+    <article class="flag flag--rev" id="zintercept">
+      <div class="liquid fade-up is-live">
+        <div class="liquid-inner">
+          <div class="ph" style="--g1:rgba(232,101,15,.5);--gx:78%;--gy:16%">
+            <div class="ph-top"><span>Proxy de interceptación</span><span>Windows y Linux</span></div>
+            <div class="ph-code">proxy   127.0.0.1:8080
+CA      generada en local</div>
+            <div class="ph-title">ZIntercept</div>
+          </div>
+        </div>
+      </div>
+      <div class="flag-body">
+        <span class="flag-status fade-up">Disponible</span>
+        <p class="flag-date fade-up">Publicada el <time datetime="2026-11-01">1 de noviembre de 2026</time> · versión 0.9.1</p>
+        <h3 class="fade-up" style="--d:60ms">ZIntercept</h3>
+        <p class="fade-up" style="--d:120ms">Proxy de interceptación para pentesting, en la línea de Burp Suite, centrado solo en seguridad ofensiva.</p>
+        <ul class="flag-facts fade-up" style="--d:180ms">
+          <li><span>Navegador</span><span>Abre su propio navegador de pruebas con el proxy y el certificado ya configurados.</span></li>
+          <li><span>Certificado</span><span>Genera su CA en tu equipo. No toca el almacén de confianza del sistema.</span></li>
+          <li><span>Motor</span><span>mitmproxy por debajo, con Python embebido. No hay que instalar nada más.</span></li>
+        </ul>
+        <div class="dl fade-up" style="--d:240ms">
+          <a class="btn btn-primary" href="{{ site.zintercept_win }}" rel="noopener noreferrer">Windows {{ dl_icon }}</a>
+          <a class="btn btn-ghost" href="{{ site.zintercept_deb }}" rel="noopener noreferrer">Linux .deb {{ dl_icon }}</a>
+        </div>
+        <p class="dl-note fade-up" style="--d:300ms">Windows 10 y 11 (instalador .exe, {{ site.zintercept_win_size }}). Linux Debian, Ubuntu y derivadas (.deb, {{ site.zintercept_deb_size }}). Las dos versiones son la misma aplicación. Úsala solo contra sistemas propios o con autorización por escrito.</p>
       </div>
     </article>
 
