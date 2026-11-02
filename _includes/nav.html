@@ -2,7 +2,7 @@
 <header class="site-header" id="site-header">
   <nav class="site-nav" aria-label="Principal">
     <a href="{{ home }}#top" class="logo" data-scroll aria-label="Iván Z, volver al inicio">
-      <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="22" fill="#1c1814"/><path d="M24 24 L76 24 L24 76 L76 76" fill="none" stroke="#e8650f" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <svg viewBox="0 0 100 100" aria-hidden="true"><rect class="logo-bg" width="100" height="100" rx="22" fill="#1c1814"/><path class="logo-z" d="M24 24 L76 24 L24 76 L76 76" fill="none" stroke="#e8650f" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/></svg>
       <span class="logo-name">Iván Z</span>
     </a>
     <ul class="nav-links">
@@ -11,6 +11,10 @@
       <li><a href="{{ home }}#apuntes" data-scroll>Apuntes</a></li>
       <li><a class="btn btn-primary" href="{{ home }}#descargar" data-scroll>Descargar ZGuard</a></li>
     </ul>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Cambiar a modo oscuro" title="Modo oscuro">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+    </button>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
   </nav>
 </header>

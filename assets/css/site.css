@@ -27,6 +27,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;appear
   --accent:#e8650f;         /* solo texto grande, rellenos y detalles */
   --accent-ink:#b4500b;     /* naranja para texto pequeño (5.1:1) */
   --dark:#1c1814;
+  --scroll:#cfc6ba;
+  --grid-line:rgba(28,24,20,.055);
+  color-scheme:light;
 
   --radius:8px;
   --gutter:2.5rem;
@@ -61,10 +64,10 @@ main{position:relative;width:100%;overflow-x:hidden}
 
 /* superficies del navegador, tematizadas */
 ::selection{background:var(--accent);color:var(--dark)}
-html{scrollbar-color:#cfc6ba var(--surface);scrollbar-width:thin}
+html{scrollbar-color:var(--scroll) var(--surface);scrollbar-width:thin}
 ::-webkit-scrollbar{width:10px}
 ::-webkit-scrollbar-track{background:var(--surface)}
-::-webkit-scrollbar-thumb{background:#cfc6ba;border-radius:99px;border:2px solid var(--surface)}
+::-webkit-scrollbar-thumb{background:var(--scroll);border-radius:99px;border:2px solid var(--surface)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 code{font-family:var(--font-mono);font-size:.9em;background:var(--surface-2);padding:.08em .35em;border-radius:4px;color:var(--text)}
 
@@ -196,8 +199,8 @@ code{font-family:var(--font-mono);font-size:.9em;background:var(--surface-2);pad
 .liquid::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 0 1px var(--line)}
 .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:1.75rem;
   background:
-    linear-gradient(rgba(28,24,20,.055) 1px,transparent 1px) 0 0/2.5rem 2.5rem,
-    linear-gradient(90deg,rgba(28,24,20,.055) 1px,transparent 1px) 0 0/2.5rem 2.5rem,
+    linear-gradient(var(--grid-line) 1px,transparent 1px) 0 0/2.5rem 2.5rem,
+    linear-gradient(90deg,var(--grid-line) 1px,transparent 1px) 0 0/2.5rem 2.5rem,
     radial-gradient(80% 70% at var(--gx,70%) var(--gy,20%),var(--g1,rgba(232,101,15,.45)),transparent 70%),
     linear-gradient(160deg,var(--surface),var(--surface-2))}
 .ph-top{display:flex;justify-content:space-between;gap:1rem;font-size:var(--fs-small);text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
@@ -384,3 +387,37 @@ body.from-app .hero-top{padding-top:3rem}
 .flag-date{margin-top:.45rem;font-size:var(--fs-small);color:var(--muted)}
 .flag-date time{color:var(--text);font-weight:500}
 .anchor{display:block;position:relative;top:-6rem;visibility:hidden}
+
+/* ---------- Modo oscuro (botón sol/luna; claro por defecto) ---------- */
+:root[data-theme="dark"]{
+  --bg:#14110e;
+  --surface:#1c1814;
+  --surface-2:#251f19;
+  --text:#f3ede5;
+  --muted:#ab9f90;          /* 7:1 sobre el fondo */
+  --line:rgba(243,237,229,.1);
+  --line-strong:rgba(243,237,229,.2);
+  --accent:#ef7424;
+  --accent-ink:#ff9a55;     /* naranja para texto pequeño (7:1) */
+  --dark:#0c0a08;
+  --scroll:#3a3128;
+  --grid-line:rgba(243,237,229,.045);
+  color-scheme:dark;
+}
+:root[data-theme="dark"] .logo-bg{fill:var(--accent)}
+:root[data-theme="dark"] .logo-z{stroke:#14110e}
+@media (hover:hover) and (pointer:fine){:root[data-theme="dark"] .btn-primary:hover{background:var(--text);color:var(--bg)}}
+:root[data-theme="dark"] .portrait{box-shadow:0 0 0 1px rgba(243,237,229,.08),0 40px 90px -30px rgba(0,0,0,.8)}
+:root[data-theme="dark"] .prose pre,:root[data-theme="dark"] .prose .highlight,:root[data-theme="dark"] .welcome{box-shadow:inset 0 0 0 1px var(--line)}
+/* transición suave solo al pulsar el botón (no al cargar) */
+.theme-switching,.theme-switching *{transition:background-color .3s ease,color .3s ease,border-color .3s ease,fill .3s ease!important}
+@media (prefers-reduced-motion:reduce){.theme-switching,.theme-switching *{transition:none!important}}
+
+.theme-toggle{position:relative;z-index:60;width:2.75rem;height:2.75rem;display:grid;place-items:center;border-radius:var(--radius);color:var(--text);margin-left:auto;margin-right:.25rem}
+.theme-toggle svg{width:1.25rem;height:1.25rem}
+.theme-toggle .i-sun{display:none}
+:root[data-theme="dark"] .theme-toggle .i-sun{display:block}
+:root[data-theme="dark"] .theme-toggle .i-moon{display:none}
+@media (hover:hover) and (pointer:fine){.theme-toggle:hover{background:var(--surface-2)}}
+.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (min-width:860px){.nav-links{margin-left:auto}.theme-toggle{margin-left:1.5rem;margin-right:0}}

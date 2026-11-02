@@ -11,7 +11,7 @@
 {%- assign desc = page.description | default: site.description %}
 <meta name="description" content="{{ desc | strip_html | strip_newlines | xml_escape }}">
 <meta name="theme-color" content="#ffffff">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="light dark">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ page.title | default: site.title | xml_escape }}">
@@ -27,6 +27,7 @@
 <link rel="preload" href="{{ '/assets/fonts/anton-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{{ '/assets/fonts/onest-400.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+<script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
 <script src="{{ '/assets/js/grid.js' | relative_url }}"></script>
 <noscript><style>
   #preloader{display:none}
