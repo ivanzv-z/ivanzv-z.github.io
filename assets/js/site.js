@@ -88,6 +88,16 @@ if (nl) {
     else { s.className = "ch"; s.textContent = c; s.style.transitionDelay = (i * 55) + "ms"; }
     nl.appendChild(s);
   });
+  // El nombre como línea de terminal, igual que el logo ›Z_: prompt delante, cursor detrás
+  const pr = document.createElement("span");
+  pr.className = "ch pr";
+  pr.innerHTML = '<svg viewBox="0 0 10 20" aria-hidden="true"><path d="M1.6 2.2 L8.4 10 L1.6 17.8"/></svg>';
+  pr.style.transitionDelay = "0ms";
+  nl.prepend(pr);
+  const cur = document.createElement("span");
+  cur.className = "ch cur";
+  cur.style.transitionDelay = ([...nl.dataset.text].length * 55 + 120) + "ms";
+  nl.appendChild(cur);
 }
 function fitName() {
   if (!nl) return;

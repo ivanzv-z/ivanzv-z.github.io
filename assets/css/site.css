@@ -425,3 +425,17 @@ body.from-app .hero-top{padding-top:3rem}
 .logo-cursor{animation:cursor-blink 1.1s steps(1,end) infinite}
 @keyframes cursor-blink{50%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.logo-cursor{animation:none}}
+
+/* ---------- Portada como terminal: ›IVÁN Z_ (mismo lenguaje que el logo) ---------- */
+.hero-name .pr{width:.42em;margin-right:.08em;vertical-align:baseline}
+.hero-name .pr svg{width:100%;height:.62em;overflow:visible;transform:translateY(-.06em)}
+.hero-name .pr path{fill:none;stroke:var(--text);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.hero-name .cur{width:.24em;height:.8em;margin-left:.1em;background:var(--text);border-radius:.02em;vertical-align:baseline}
+.hero-name.in .cur{animation:cursor-blink 1.1s steps(1,end) 1.6s infinite}
+@media (prefers-reduced-motion:reduce){.hero-name.in .cur{animation:none}}
+/* líneas de arriba como órdenes */
+.hero-roles .line>span::before{content:"›";color:var(--accent);margin-right:.35em}
+/* pantalla de carga con el logo */
+.pl-brand{display:flex;align-items:center;gap:.75rem}
+.pl-brand svg{width:2.6rem;height:2.6rem}
+.pl-brand .logo-cursor{animation:cursor-blink .7s steps(1,end) infinite}
