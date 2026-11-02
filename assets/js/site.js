@@ -161,7 +161,10 @@ function heroIn() {
 }
 
 // Si se llega con un ancla (#apuntes) se va directo ahí
-const hashTarget = location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.slice(1))) : null;
+// Abierta desde ZGuard (?ref=zguard): directa a su sección, sin preloader.
+const fromZGuard = new URLSearchParams(location.search).get("ref") === "zguard";
+const hashTarget = location.hash.length > 1 ? document.getElementById(decodeURIComponent(location.hash.slice(1)))
+  : (fromZGuard ? document.getElementById("zguard") : null);
 let seen = false;
 try { seen = sessionStorage.getItem("ivanz-intro") === "1"; } catch (e) {}
 

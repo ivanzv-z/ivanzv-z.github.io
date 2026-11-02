@@ -34,7 +34,7 @@ preloader: true
         </p>
         <div class="hero-ctas fade-up" id="hero-ctas" style="--fy:16px;--d:100ms">
           <a class="btn btn-primary" href="#descargar" data-scroll>Descargar ZIntercept {% include arrow.html %}</a>
-          <a class="btn btn-ghost" href="#aplicaciones" data-scroll>Ver aplicaciones</a>
+          <a class="btn btn-ghost" href="#zguard" data-scroll>Nuevo: ZGuard</a>
         </div>
       </div>
     </div>
@@ -77,7 +77,7 @@ preloader: true
   <section class="section" id="aplicaciones" style="padding-top:0">
     <div class="sec-head">
       <h2 class="h-section reveal-lines" style="max-width:13ch" data-split>Herramientas que puedes usar hoy.</h2>
-      <p class="sec-aside fade-up">ZIntercept ya se puede descargar. Las demás siguen en el taller.</p>
+      <p class="sec-aside fade-up">ZIntercept y ZGuard ya se pueden descargar. Las demás siguen en el taller.</p>
     </div>
 
     <article class="flag" id="descargar">
@@ -105,6 +105,37 @@ CA      generada en local</div>
           <a class="btn btn-ghost" href="{{ site.zintercept_deb }}" rel="noopener noreferrer">Linux .deb {{ dl_icon }}</a>
         </div>
         <p class="dl-note fade-up" style="--d:300ms">Windows 10 y 11 (instalador .exe, {{ site.zintercept_win_size }}). Linux Debian, Ubuntu y derivadas (.deb, {{ site.zintercept_deb_size }}). Las dos versiones son la misma aplicación. Úsala solo contra sistemas propios o con autorización por escrito.</p>
+      </div>
+    </article>
+
+
+    <article class="flag flag--rev" id="zguard">
+      <div class="liquid fade-up is-live">
+        <div class="liquid-inner">
+          <div class="ph" style="--g1:rgba(232,101,15,.5);--gx:22%;--gy:20%">
+            <div class="ph-top"><span>Monitor de red y cortafuegos</span><span>Windows</span></div>
+            <svg class="ph-mark" viewBox="160 182 704 752" aria-hidden="true"><path d="M794 470 V500 Q794 742 512 864 Q230 742 230 500 V252 H794 L360 596 H664" fill="none" stroke="currentColor" stroke-width="92" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="ph-code">chrome.exe    → youtube.com · Reino Unido
+Spotify.exe   → spotify.com · EE. UU.
+upd.exe       → servidor de malware · <b>bloqueado</b></div>
+            <div class="ph-title">ZGuard</div>
+          </div>
+        </div>
+      </div>
+      <div class="flag-body">
+        <span class="flag-status fade-up">Nuevo · Disponible</span>
+        <h3 class="fade-up" style="--d:60ms">ZGuard</h3>
+        <p class="fade-up" style="--d:120ms">Qué programa de tu PC se conecta adónde, en lenguaje normal. Te avisa de lo raro y lo cortas con un clic.</p>
+        <ul class="flag-facts fade-up" style="--d:180ms">
+          <li><span>Ahora</span><span>Cada programa con la web, la empresa y el país con los que habla, y cuántos datos gasta.</span></li>
+          <li><span>Detective</span><span>Avisos explicados: servidores de malware conocidos, programas en carpetas temporales, conexiones que se repiten como un reloj… con qué hacer en cada caso.</span></li>
+          <li><span>Bloqueo</span><span>Un programa, una web o un país, durante una hora o para siempre. Usa el Firewall de Windows, sin drivers, y se deshace con un clic.</span></li>
+          <li><span>Privacidad</span><span>Nada sale de tu PC. Arranca en «Solo observar»: no toca nada hasta que tú lo decides.</span></li>
+        </ul>
+        <div class="dl fade-up" style="--d:240ms">
+          <a class="btn btn-primary" href="{{ site.zguard_win }}" rel="noopener noreferrer">Descargar para Windows {{ dl_icon }}</a>
+        </div>
+        <p class="dl-note fade-up" style="--d:300ms">Windows 10 y 11 de 64 bits (instalador .exe, {{ site.zguard_win_size }}). Pide permiso de administrador porque necesita ver todos los programas y usar el Firewall de Windows. Si Windows muestra «Windows protegió su PC», pulsa «Más información» y «Ejecutar de todas formas»: el instalador todavía no tiene firma de pago.</p>
       </div>
     </article>
 

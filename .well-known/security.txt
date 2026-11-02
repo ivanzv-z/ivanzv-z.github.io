@@ -1,0 +1,8 @@
+# Política de avisos de seguridad de Iván Z
+# Si encuentras un fallo en esta web, en ZIntercept o en ZGuard, avísame en privado
+# (para ZGuard: https://github.com/ivanzv-z/zguard/security/advisories/new):
+Contact: https://github.com/ivanzv-z/zintercept/security/advisories/new
+Expires: 2027-11-01T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://ivanzv-z.github.io/.well-known/security.txt
+Policy: https://github.com/ivanzv-z/zintercept/blob/main/SECURITY.md

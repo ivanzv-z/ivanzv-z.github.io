@@ -373,3 +373,9 @@ a.note:active{transform:none}
 .welcome-close svg{width:1rem;height:1rem}
 @media (hover:hover) and (pointer:fine){.welcome-close:hover{background:rgba(255,255,255,.1)}}
 body.from-app .hero-top{padding-top:3rem}
+
+/* Segunda app destacada (ZGuard): imagen a la derecha en escritorio y marca del trazo único */
+@media (min-width:1024px){.flag--rev{grid-template-columns:5fr 7fr}.flag--rev .liquid{order:2}.flag--rev .flag-body{order:1}}
+.ph-mark{position:absolute;right:8%;top:50%;width:min(34%,15rem);height:auto;transform:translateY(-58%);color:var(--accent);opacity:.95}
+.ph-code b{color:var(--accent-ink);font-weight:600}
+@media (max-width:640px){.ph-mark{width:30%;right:6%}}
